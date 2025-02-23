@@ -1,0 +1,474 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If Luigi Gyatjonie somehow rizzed up Baby Gronk while drinking the Grimice shake a few things may happen...</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 24px;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.2),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+            margin: 2rem 0;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(120deg, #00ff9d, #00ccff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #00ff9d;
+        }
+
+        .description {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: #a8b2d1;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .os-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.5rem;
+            border-radius: 20px;
+        }
+
+        .os-tab {
+            padding: 1rem 2rem;
+            background: transparent;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 600;
+        }
+
+        .os-tab.active {
+            background: rgba(0, 255, 157, 0.15);
+            color: #00ff9d;
+            transform: scale(1.05);
+        }
+
+        .content-area {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 2rem;
+            border-radius: 16px;
+            min-height: 200px;
+            font-size: 1.1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .code-block {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            position: relative;
+            font-family: 'JetBrains Mono', monospace;
+            border: 1px solid rgba(0, 255, 157, 0.2);
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(0, 255, 157, 0.2);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            color: #00ff9d;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .copy-btn:hover {
+            background: rgba(0, 255, 157, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .step {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .arrow-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .arrow-button {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .arrow-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(5px);
+        }
+
+        .method-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .method-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .method-card.special {
+            border: 2px solid #00ff9d;
+            background: rgba(0, 255, 157, 0.05);
+        }
+
+        .method-card h3 {
+            margin-bottom: 1rem;
+            color: #00ff9d;
+        }
+
+        .fun-link {
+            color: #00ff9d;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .fun-link:hover {
+            color: #00ccff;
+            text-decoration: underline;
+        }
+
+        .example {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(0, 255, 157, 0.1);
+            border-radius: 8px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .upload-area {
+            border: 2px dashed rgba(0, 255, 157, 0.3);
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .upload-area:hover {
+            border-color: #00ff9d;
+            background: rgba(0, 255, 157, 0.05);
+        }
+
+        .upload-button {
+            background: #00ff9d;
+            color: black;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: all 0.3s;
+        }
+
+        .upload-button:hover {
+            background: #00cc7d;
+        }
+
+        .preview-area {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .preview-area img {
+            max-width: 100%;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+
+        .code-display {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+
+        .code-display pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .download-button {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #00ff9d;
+            color: black;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .download-button:hover {
+            transform: scale(1.05);
+            background: #00cc7d;
+        }
+
+        .info-box {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes fadeIn {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .os-tabs {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container fade-in">
+        <!-- Original content -->
+    </div>
+
+    <div class="arrow-container">
+        <button class="arrow-button" onclick="scrollToInfo()">
+            <svg viewBox="0 0 24 24" width="32" height="32">
+                <path fill="#00ff9d" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+            </svg>
+        </button>
+    </div>
+
+    <div class="container fade-in" id="info-section">
+        <h2>How to Create .rizz Files</h2>
+        
+        <div class="method-card">
+            <h3>Method 1: The ＢＯＲＩＮＧ Way (Any OS)</h3>
+            <ol>
+                <li>Open your file manager</li>
+                <li>Click the png file</li>
+                <li>Rename it to .rizz</li>
+                <li>BAM! You're done yay good for you.</li>
+            </ol>
+            <p class="example">Example: booant.png → booant.rizz</p>
+        </div>
+
+        <div class="method-card">
+            <h3>Method 2: The ԲᑌƝ Way</h3>
+            <p>1. Go to <a href="http://hi.com" target="_blank" class="fun-link">HERE</a></p>
+            <p>2. Upload your file</p>
+            <p>3. Download the file it baked</p>
+            <p>4. Yay!</p>
+        </div>
+
+        <div class="method-card special">
+            <h3>🔒 Secret Method 3</h3>
+            <p>This is a bit hard and might not work on Mac</p>
+            <div class="steps">
+                <p><strong>Windows:</strong></p>
+                <ol>
+                    <li>Go to file explorer</li>
+                    <li>Open the .rizz in notepad</li>
+                    <li>Replace the goofy stuff with your image data</li>
+                </ol>
+                <div class="info-box">
+                    <p><strong>How to get image data:</strong></p>
+                    <ol>
+                        <li>Go to <a href="https://www.base64-image.de/" target="_blank">base64-image.de</a></li>
+                        <li>Upload the image</li>
+                        <li>Copy the data code it gives you</li>
+                        <li>Paste it in the notepad</li>
+                    </ol>
+                    <p class="note">It should save automatically. If nothing happens after you click open for .rizz, try doing Ctrl + S and saving it as filename.rizz</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="download-section">
+            <h3>Want to see me PROVE method 3? Look!</h3>
+            <a href="https://file.garden/Z43SqDt67TpUFO8v/testingfile.rizz" class="download-button" target="_blank">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="currentColor" d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                </svg>
+                <span>testingfile.rizz</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="arrow-container">
+        <button class="arrow-button" onclick="scrollToUploader()">
+            <svg viewBox="0 0 24 24" width="32" height="32">
+                <path fill="#00ff9d" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+            </svg>
+        </button>
+    </div>
+
+    <div class="container fade-in" id="uploader-section">
+        <h2>Upload your .rizz file</h2>
+        <div class="upload-area" id="drop-zone">
+            <svg viewBox="0 0 24 24" width="64" height="64">
+                <path fill="#00ff9d" d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/>
+            </svg>
+            <p style="font-size: 1.2rem; margin: 1rem 0;">Drag & Drop your .rizz file here</p>
+            <p style="color: #a8b2d1;">or</p>
+            <input type="file" id="file-input" accept=".rizz" hidden>
+            <button class="upload-button" onclick="document.getElementById('file-input').click()">Choose File</button>
+        </div>
+        <div id="preview" class="preview-area hidden">
+            <h3>Preview:</h3>
+            <img id="preview-image" src="" alt="Preview">
+            <div class="code-display">
+                <h4>Original Code:</h4>
+                <pre id="original-code"></pre>
+                <h4>Generated Code:</h4>
+                <pre id="generated-code"></pre>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Existing functions
+
+        function scrollToInfo() {
+            document.getElementById('info-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToUploader() {
+            document.getElementById('uploader-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // File upload handling
+        const dropZone = document.getElementById('drop-zone');
+        const fileInput = document.getElementById('file-input');
+        const preview = document.getElementById('preview');
+        const previewImage = document.getElementById('preview-image');
+        const originalCode = document.getElementById('original-code');
+        const generatedCode = document.getElementById('generated-code');
+
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.style.borderColor = '#00ff9d';
+        });
+
+        dropZone.addEventListener('dragleave', (e) => {
+            e.preventDefault();
+            dropZone.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+            handleFile(e.dataTransfer.files[0]);
+        });
+
+        fileInput.addEventListener('change', (e) => {
+            handleFile(e.target.files[0]);
+        });
+
+        function handleFile(file) {
+            if (!file.name.endsWith('.rizz')) {
+                alert('Please upload a .rizz file!');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                // Display preview
+                previewImage.src = e.target.result;
+                originalCode.textContent = e.target.result.substring(0, 100) + '...';
+                generatedCode.textContent = 'Generated code will appear here...';
+                preview.classList.remove('hidden');
+            };
+            reader.readAsDataURL(file);
+        }
+    </script>
+</body>
+</html>

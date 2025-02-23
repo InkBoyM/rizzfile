@@ -1,0 +1,225 @@
+# If Luigi Gyatjonie somehow rizzed up Baby Gronk while drinking the Grimice shake a few things may happen...
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If Luigi Gyatjonie somehow rizzed up Baby Gronk while drinking the Grimice shake a few things may happen...</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            min-height: 100vh;
+            background: url('https://preview.redd.it/attmoz-rizz-face-v0-5ymdqwaifs4c1.jpg?width=905&format=pjpg&auto=webp&s=70f852ada6d38d61903d3cb381d3ac174b402f82') center/cover fixed;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .description {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #ffffff;
+            opacity: 0.8;
+            font-size: 1.1rem;
+        }
+
+        .os-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            justify-content: center;
+        }
+
+        .os-tab {
+            padding: 0.5rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .os-tab.active {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        .content-area {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            min-height: 200px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .code-block {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            position: relative;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .copy-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .step {
+            margin-bottom: 1.5rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .info-button {
+            margin-top: 2rem;
+            padding: 0.75rem 1.5rem;
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background-color 0.3s;
+        }
+
+        .info-button:hover {
+            background-color: #e91e63;
+        }
+    </style>
+</head>
+<body>
+    <div class="container fade-in">
+        <h2>How to open .rizz files</h2>
+        <p class="description">Lets try to make a .png file more fun! And only people with the scripts know how to open it!</p>
+        <div class="os-tabs">
+            <div class="os-tab active" onclick="switchOS('windows')">Windows</div>
+            <div class="os-tab" onclick="switchOS('macos')">MacOS</div>
+        </div>
+
+        <div class="content-area" id="windows-content">
+            <div class="step">
+                <strong>1. Open notepad and paste this in</strong>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode('win-code')">Copy</button>
+                    <pre id="win-code">@echo off
+start chrome "%~1"</pre>
+                </div>
+                <p>Save this as open_rizz.bat (replace chrome with msedge or firefox if needed, or use start for default browser)</p>
+            </div>
+
+            <div class="step">
+                <strong>2. Associate .rizz Files</strong>
+                <p>- Right-click any .rizz file → Open with → Choose another app<br>
+                - Select "Look for another app on this PC"<br>
+                - Navigate to your open_rizz.bat file and select it<br>
+                - Check "Always use this app to open .rizz files"</p>
+            </div>
+        </div>
+
+        <div class="content-area hidden" id="macos-content">
+            <div class="step">
+                <strong>1. Create the Opener Script (Heads up: idk if it works since i use windows so i just asked chatgpt lol :/)</strong>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode('mac-code')">Copy</button>
+                    <pre id="mac-code">#!/bin/bash
+open -a "Google Chrome" "$1"</pre>
+                </div>
+                <p>Open Terminal and save this as: ~/open_rizz.sh</p>
+            </div>
+
+            <div class="step">
+                <strong>2. Make the Script Work</strong>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode('mac-chmod')">Copy</button>
+                    <pre id="mac-chmod">chmod +x ~/open_rizz.sh</pre>
+                </div>
+            </div>
+        </div>
+
+        <button class="info-button" onclick="window.location.href='https://inkboym.github.io/rizzfile/how.htm'">How to Create .rizz Files?
+</button>
+    </div>
+
+    <script>
+        function switchOS(os) {
+            const tabs = document.querySelectorAll('.os-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            const windowsContent = document.getElementById('windows-content');
+            const macosContent = document.getElementById('macos-content');
+            
+            if (os === 'windows') {
+                windowsContent.classList.remove('hidden');
+                macosContent.classList.add('hidden');
+            } else {
+                windowsContent.classList.add('hidden');
+                macosContent.classList.remove('hidden');
+            }
+        }
+
+        function copyCode(elementId) {
+            const codeElement = document.getElementById(elementId);
+            const text = codeElement.textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                const button = event.target;
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                setTimeout(() => {
+                    button.textContent = originalText;
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
